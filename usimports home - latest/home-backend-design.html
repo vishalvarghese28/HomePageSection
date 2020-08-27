@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>View Product</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/customUsimportsContact.css">
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <section class="content container">
+            <div class="container-fluid">
+                <h4 class='py-3'>Home</h4>
+                <div class="col-md-12">
+                    <div class="card card-dark">
+                        <div class="card-header">
+                            <h3 class="card-title">SEO Information</h3>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputh1tag">H1 Tag</label>
+                                        <input type="text" id="inputh1tag" class="form-control" placeholder="Enter heading Tag (maximum 20-70 characters)">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputurl"> URL</label>
+                                        <input type="text" id="inputurl" class="form-control" placeholder="/page-category/page">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputtitle">Meta Title</label>
+                                <input type="text" id="inputtitle" class="form-control" placeholder="Enter Meta Title (maximum 60 character)">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputmetadesc">Meta Description</label>
+                                <textarea class="form-control" id="inputmetadesc">Enter Meta Description (maximum 158 character) </textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="inpukwd">Meta Keywords</label>
+                                <input type="text" id="inpukwd" class="form-control" placeholder="Enter Meta Keyword (100 to 255 characters)">
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+
+
+
+
+                <div class="col-md-12">
+                    <div class="card card-dark">
+                        <div class="card-header ">
+                            <h3 class="card-title">Features Section</h3>
+                            <input type="text" placeholder="Enter the Heading for Feature" class='form-control'>
+                            <div class="d-flex ml-5">
+                                <button class="btn btn-primary" id='AddMoreFeature'>
+                                    <i class="fa fa-plus" aria-hidden="true"></i> Add</button>
+                            </div>
+                        </div>
+                        <div class="card-body dynamicDivBody">
+
+                            <div id="FeatureHolder">
+                                <div class="individualFeature draggable" draggable='true'>
+
+                                    <div class="row mb-3">
+
+                                        <div class="col-md-5  ">
+
+                                            <p class='bg-danger text-white py-1 text-center'>Need Exact Size : width : 54 Height: 54</p>
+                                            <div class="tab">
+                                                <button class="tablinks" id="defaultOpen" onclick="openimgUpload(event, 'webp')">Webp</button>
+                                                <button class="tablinks" onclick="openimgUpload(event, 'jxr')">JXR</button>
+                                                <button class="tablinks" onclick="openimgUpload(event, 'jpg')">JPG/PNG</button>
+                                            </div>
+
+                                            <div id="webp" class="tabcontent defaultOpen">
+
+                                                <div class='mt-3'>
+
+                                                    <input class="myinputforWebp" type="file" onchange="checkForwebp(this)" accept="image/webp">
+
+
+                                                    <img src="images/upload.jpg" class="img-responsive img-fluid img-fluid-height homeagBanner">
+                                                    <div class="hereForDimensionDetls_webp mt-3"></div>
+                                                </div>
+                                            </div>
+
+                                            <div id="jxr" class="tabcontent">
+                                                <label for="myinputforJXR">Select a file:</label>
+                                                <input type="file" class="myinputforJXR" onchange="checkForJXR(this)">
+                                                <div class='mt-3'>
+                                                    <br> Your Browser Does not Support JXR
+                                                </div>
+
+                                                <div class="hereForDimensionDetls_jxr mt-3"></div>
+                                            </div>
+
+                                            <div id="jpg" class="tabcontent">
+
+                                                <div class='mt-3'>
+
+                                                    <input class='myinputforJPG' type="file" onchange="checkForJPG(this)" accept="image/x-png,image/jpeg">
+
+                                                    <img src="images/upload.jpg" class="img-responsive img-fluid img-fluid-height homeagBanner">
+                                                    <div class="hereForDimensionDetls_jpg mt-3"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group mt-3 altTextForBanner">
+                                                <label for="altTxt">Alt Text for Image</label>
+                                                <input type="text" class='form-control' placeholder="Alt text for Image" id='altTxt'>
+                                            </div>
+
+
+
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <div class="col-md-12">
+                                                <div class="col-md-12 mb-1">
+                                                    <label for="featureHeading">Feature Heading </label>
+                                                </div>
+                                                <div class="col-md-12  mb-2">
+                                                    <input type="text" class='form-control' id="featureHeading" placeholder="Feature Heading">
+                                                </div>
+                                                <div class="col-md-12  mb-2">
+                                                    <label for="featureDescription">Feature Details:</label>
+                                                    <textarea class="form-control" rows="5" id="featureDescription"></textarea>
+                                                </div>
+                                                <div class="col-md-12">
+
+                                                    <label for="FeaturelinkPage"> Page URL  </label>
+
+                                                    <input type="text" id='FeaturelinkPage' class='form-control' placeholder="Page URL">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <span class='closeFeature'>X</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                </div>
+                <!-- /.card -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="col-md-12">
+                    <div class="card card-dark">
+                        <div class="card-header">
+
+                            <h3 class="card-title">Blog Section</h3>
+                            <input type="text" placeholder="Enter the Blog for Feature" class='form-control'>
+                            <div class='d-flex ml-5'>
+                                <button class="btn btn-primary" id='AddMoreBlog'><i class="fa fa-plus" aria-hidden="true"></i> Add</button>
+                            </div>
+
+                        </div>
+                        <div class="card-body dynamicDivBody">
+
+                            <div id="BlogHolder">
+                                <div class="individualBlog draggable" draggable='true'>
+
+                                    <div class="row mb-3 blogSection">
+                                        <div class="col-md-5">
+                                            <p class='bg-danger text-white py-1 text-center'>Need Exact Size : width : 230 Height: 220</p>
+                                            <div class="tab">
+                                                <button class="tablinks" id="defaultOpen_blogSection" onclick="openimgUpload_blogSection(event, 'webp')">Webp</button>
+                                                <button class="tablinks" onclick="openimgUpload_blogSection(event, 'jxr')">JXR</button>
+                                                <button class="tablinks" onclick="openimgUpload_blogSection(event, 'jpg')">JPG/PNG</button>
+                                            </div>
+
+                                            <div id="webp" class="tabcontent">
+
+                                                <div class='mt-3'>
+
+                                                    <input class="myinputforWebp" type="file" onchange="checkForwebp_blogSection(this)" accept="image/webp">
+
+
+                                                    <img src="images/upload.jpg" class="img-responsive img-fluid img-fluid-height homeagBanner">
+                                                    <div class="hereForDimensionDetls_webp mt-3"></div>
+                                                </div>
+                                            </div>
+
+                                            <div id="jxr" class="tabcontent">
+                                                <label for="myinputforJXR">Select a file:</label>
+                                                <input type="file" class="myinputforJXR" onchange="checkForJXR_blogSection(this)">
+                                                <div class='mt-3'>
+                                                    <br> Your Browser Does not Support JXR
+                                                </div>
+                                                <!-- <div class='mt-3'>
+                                                        <label for="myinputforJXR" class="btn btn-success"> Upload JXR format
+                                                        <input id="myinputforJXR" type="file" onchange="checkForJXR(this)" accept="image/jxrS">
+                                                        </label>
+                                                        <img src="images/upload.jpg" class="img-responsive img-fluid img-fluid-height homeagBanner">
+                                                     
+                                                    </div> -->
+                                                <div class="hereForDimensionDetls_jxr mt-3"></div>
+                                            </div>
+
+                                            <div id="jpg" class="tabcontent">
+
+                                                <div class='mt-3'>
+
+                                                    <input class='myinputforJPG' type="file" onchange="checkForJPG_blogSection(this)" accept="image/x-png,image/jpeg">
+
+                                                    <img src="images/upload.jpg" class="img-responsive img-fluid img-fluid-height homeagBanner">
+                                                    <div class="hereForDimensionDetls_jpg mt-3"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group mt-3 altTextForBanner">
+                                                <label for="altTxt">Alt Text for Image</label>
+                                                <input type="text" class='form-control' placeholder="Alt text for Image" id='altTxt'>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <div class="col-md-12">
+                                                <div class="col-md-12 mb-1">
+                                                    <label for="BlogHeading">Blog Heading </label>
+                                                </div>
+                                                <div class="col-md-12  mb-2">
+                                                    <input type="text" class='form-control' id="BlogHeading" placeholder="Blog Heading">
+                                                </div>
+                                                <div class="col-md-12  mb-2">
+                                                    <label for="BlogDescription">Blog Details:</label>
+                                                    <textarea class="form-control" rows="5" id="BlogDescription"></textarea>
+                                                </div>
+                                                <div class="col-md-12">
+
+                                                    <label for="BloglinkPage"> Blog URL </label>
+
+                                                    <input type="text" id='BloglinkPage' class='form-control' placeholder="Blog URL">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <span class='closeBlog'>X</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="card card-dark">
+                        <div class="card-header">
+
+                            <h3 class="card-title">Additional Section</h3>
+
+                        </div>
+                        <div class="card-body dynamicDivBody">
+                            <textarea id="mytextarea" name="mytextarea">
+           
+                           </textarea>
+                            <div class='text-center'>
+                                <button class='btn btn-success btn-lg mt-2'>Save</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <!-- /.container-fluid -->
+        </section>
+        </div>
+        <!-- ./wrapper -->
+
+
+        <div id='showModelB4Del' class='px-2 py-2'>
+            <h4>Are You Sure, You want to delete.</h4>
+            <div class='d-flex'>
+                <a href="javascript:void(0)" id='yesDelContact' class="btn btn-success mr-3">Yes</a>
+                <!-- <a href="javascript:void(0)" id='NoDelContact' class="btn btn-danger">No</a> -->
+            </div>
+            <span class='closModalMsg'>X</span>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script defer src='js/customusimportcontact.js'></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.tinymce.com/4/tinymce.min.js" referrerpolicy="origin"></script>
+        <script>
+            // Get the element with id="defaultOpen" and click on it
+            $(document).ready(function() {
+                document.getElementById("defaultOpen").click();
+                document.getElementById("defaultOpen_blogSection").click();
+
+            })
+
+
+            // tinymce.init({
+            //     selector: '#mytextarea'
+            // });
+
+
+            $(document).ready(function() {
+                tinymce.init({
+                    selector: '#mytextarea',
+                    height: 300,
+                    menubar: true,
+                    fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
+                    plugins: [
+                        'advlist autolink lists link image charmap print preview anchor',
+                        'searchreplace visualblocks code fullscreen',
+                        'insertdatetime media table paste code help wordcount textcolor colorpicker'
+                    ],
+                    toolbar: 'sizeselect styleselect | fontselect |  fontsizeselect | forecolor backcolor | undo redo | ' +
+                        ' bold italic backcolor | alignleft aligncenter ' +
+                        ' alignright alignjustify | bullist numlist outdent indent |' +
+                        ' removeformat | help | preview | fullscreen',
+                    content_css: [
+                        '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+                        'css/stylesheefTinyEditor.css'
+                    ]
+                });
+            });
+        </script>
+</body>
+
+</html>

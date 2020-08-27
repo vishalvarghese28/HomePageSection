@@ -1,0 +1,132 @@
+ h1 {
+     font-size: 1.25rem;
+     color: #903450;
+     font-weight: 900;
+     margin-bottom: 1rem!important;
+     margin-top: 1rem!important;
+     line-height: 1.2;
+     font-family: inherit;
+     font-size: 1.2rem!important;
+ }
+ 
+ h2 {
+     font-size: 1.0rem;
+     color: #33659b;
+     font-weight: 900;
+     margin-bottom: 1rem!important;
+     margin-top: 1rem!important;
+     line-height: 1.2;
+     font-family: inherit;
+     font-size: 1.0rem!important;
+ }
+ 
+ h3 {
+     font-size: 0.8rem;
+     color: black;
+     font-weight: 700;
+     margin-bottom: 1rem!important;
+     margin-top: 1rem!important;
+     line-height: 1.2;
+     font-family: inherit;
+     font-size: 1.0rem!important;
+ }
+ 
+ h4 {
+     font-size: 0.8rem;
+     color: #903450;
+     font-weight: 600;
+     margin-bottom: 1rem!important;
+     margin-top: 1rem!important;
+     line-height: 1.2;
+     font-family: inherit;
+     font-size: 1.0rem!important;
+ }
+ 
+ h5 {
+     font-size: 0.8rem;
+     color: #33659b;
+     font-weight: 600;
+     margin-bottom: 1rem!important;
+     margin-top: 1rem!important;
+     line-height: 1.2;
+     font-family: inherit;
+     font-size: 1.0rem!important;
+ }
+ 
+ h6 {
+     font-size: 0.8rem;
+     color: black;
+     font-weight: 500;
+     margin-bottom: 1rem!important;
+     margin-top: 1rem!important;
+     line-height: 1.2;
+     font-family: inherit;
+     font-size: 1.0rem!important;
+ }
+ 
+ p {
+     color: #000!important;
+     font-size: 1rem!important;
+     text-shadow: 1px 1px 1px #86868685;
+     margin-top: .5em;
+     margin-bottom: 1rem;
+     line-height: 1.8;
+ }
+ 
+ a {
+     color: #33659b!important;
+ }
+ 
+ .tox-collection__item {
+     margin: 0.5rem 0rem
+ }
+ 
+ .tox-collection__item h1,
+ h2,
+ h3,
+ h4 {
+     padding: 0rem 0rem!important
+ }
+ 
+ .tox-tinymce {
+     height: 500px!important;
+ }
+ 
+ .tox-notifications-container {
+     display: none;
+ }
+ 
+ ul {
+     margin: 0;
+     padding: 0;
+     list-style: none;
+ }
+ 
+ ol {
+     margin: 0;
+     padding: 0;
+ }
+ 
+ li {
+     margin-left: 2.0em;
+     padding-left: 1.2em;
+     position: relative;
+ }
+ 
+ ul li {
+     margin-left: 1.5em;
+     padding-left: 1.2em;
+     position: relative;
+ }
+ 
+ ul li:before {
+     content: '\2192';
+     position: absolute;
+     left: 0;
+     width: 15px;
+     height: 5px;
+ }
+ 
+ ol li {
+     padding-left: 0.3em
+ }

@@ -1,0 +1,171 @@
+.card-dark:not(.card-outline)>.card-header {
+    background-color: #343a40;
+}
+
+.card-header {
+    padding: 1rem 1.25rem!important;
+}
+
+.card-header {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    /* padding: 0.5rem 1rem; */
+    position: relative;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    min-height: 1rem;
+    line-height: 0rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.card-title {
+    float: left;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 0;
+    white-space: nowrap;
+    margin-right: 2rem
+}
+
+.card-header>.card-tools {
+    float: right;
+    margin-right: -.625rem;
+}
+
+.card-dark:not(.card-outline)>.card-header,
+.card-dark:not(.card-outline)>.card-header a {
+    color: #fff;
+}
+
+.card-header>.card-tools [data-toggle=tooltip] {
+    position: relative;
+    color: white
+}
+
+.card-header>.card-tools {
+    float: right;
+    margin-right: -.625rem;
+}
+
+.FeatureHolder .form-control {
+    width: 100%;
+}
+
+.contactFormHolder .form-control {
+    width: 100%;
+}
+
+.BlogHolder {
+    background: #edebee;
+    padding: 1rem;
+}
+
+.BlogHolder {
+    background: #edebee;
+    padding: 1rem;
+}
+
+.individualFeature {
+    margin-top: 1rem;
+    background: #bfbdbd;
+    padding: 1rem;
+    position: relative;
+}
+
+.individualBlog {
+    margin-top: 1rem;
+    background: #bfbdbd;
+    padding: 1rem;
+    position: relative;
+}
+
+.draggable {
+    cursor: grab;
+    position: relative;
+    transition: 0.5s
+}
+
+.draggableBlog {
+    cursor: grab;
+    position: relative;
+    transition: 0.5s
+}
+
+.dragging {
+    opacity: 0.3;
+    border: 1px solid red
+}
+
+.closeFeature {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    background: red;
+    color: white;
+    FONT-WEIGHT: 900;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.closeBlog {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    background: red;
+    color: white;
+    FONT-WEIGHT: 900;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#showModelB4Del {
+    padding: 10px 50px!important;
+    max-width: 500px;
+    max-height: 300px;
+    background: #edebee;
+    color: black;
+    border: 5px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.rotateItB4Del {
+    transform: translateX(300px);
+    opacity: 0.5
+}
+
+.closModalMsg {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    padding: 5px 10px;
+    color: white;
+    background: red;
+    cursor: pointer;
+}
+
+label input[type='file'] {
+    display: none
+}
+
+.card-dark:not(.card-outline)>.card-header {
+    background-color: #808081!important;
+}
+
+.dynamicDivBody {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+    background: #e5e2e2;
+}

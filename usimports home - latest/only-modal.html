@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>View Product</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/customUsimportsContact.css">
+    <style>
+        @media (min-width: 576px) {
+            .modal-dialog {
+                max-width: 80%;
+                margin: 1.75rem auto;
+            }
+        }
+    </style>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <section class="content container">
+            <div class="container-fluid">
+
+
+
+
+                <div class="col-md-12">
+                    <div class="card card-dark">
+                        <div class="card-header ">
+                            <h3 class="card-title">Features Section</h3>
+                            <input type="text" placeholder="Enter the Heading for Feature" class='form-control'>
+                            <div class="d-flex ml-5">
+                                <button class="btn btn-primary" id='AddMoreFeature'>
+                                    <i class="fa fa-plus" aria-hidden="true"></i> Add</button>
+                            </div>
+                        </div>
+                        <div class="card-body dynamicDivBody">
+
+                            <div id="FeatureHolder">
+                                <div class="individualFeature draggable" draggable='true'>
+
+                                    <div class="row mb-3">
+
+                                        <div class="col-md-5  ">
+
+                                            <p class='bg-danger text-white py-1 text-center'>Need Exact Size : width : 54 Height: 54</p>
+                                            <div class="tab">
+                                                <button class="tablinks" id="defaultOpen" onclick="openimgUpload(event, 'webp')">Webp</button>
+                                                <button class="tablinks" onclick="openimgUpload(event, 'jxr')">JXR</button>
+                                                <button class="tablinks" onclick="openimgUpload(event, 'jpg')">JPG/PNG</button>
+                                            </div>
+
+                                            <div id="webp" class="tabcontent defaultOpen">
+
+                                                <div class='mt-3'>
+
+                                                    <input class="myinputforWebp" type="file" onchange="checkForwebp(this)" accept="image/webp">
+
+
+                                                    <img src="images/upload.jpg" class="img-responsive img-fluid img-fluid-height homeagBanner">
+                                                    <div class="hereForDimensionDetls_webp mt-3"></div>
+                                                </div>
+                                            </div>
+
+                                            <div id="jxr" class="tabcontent">
+                                                <label for="myinputforJXR">Select a file:</label>
+                                                <input type="file" class="myinputforJXR" onchange="checkForJXR(this)">
+                                                <div class='mt-3'>
+                                                    <br> Your Browser Does not Support JXR
+                                                </div>
+
+                                                <div class="hereForDimensionDetls_jxr mt-3"></div>
+                                            </div>
+
+                                            <div id="jpg" class="tabcontent">
+
+                                                <div class='mt-3'>
+
+                                                    <input class='myinputforJPG' type="file" onchange="checkForJPG(this)" accept="image/x-png,image/jpeg">
+
+                                                    <img src="images/upload.jpg" class="img-responsive img-fluid img-fluid-height homeagBanner">
+                                                    <div class="hereForDimensionDetls_jpg mt-3"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group mt-3 altTextForBanner">
+                                                <label for="altTxt">Alt Text for Image</label>
+                                                <input type="text" class='form-control' placeholder="Alt text for Image" id='altTxt'>
+                                            </div>
+
+
+
+                                        </div>
+
+                                        <div class="col-md-7">
+                                            <div class="col-md-12">
+                                                <div class="col-md-12 mb-1">
+                                                    <label for="featureHeading">Feature Heading </label>
+                                                </div>
+                                                <div class="col-md-12  mb-2">
+                                                    <input type="text" class='form-control' id="featureHeading" placeholder="Feature Heading">
+                                                </div>
+                                                <div class="col-md-12  mb-2">
+                                                    <label for="featureDescription">Feature Details:</label>
+                                                    <textarea class="form-control" rows="5" id="featureDescription"></textarea>
+                                                </div>
+                                                <div class="col-md-12">
+
+                                                    <label for="FeaturelinkPage"> Page URL  </label>
+
+                                                    <input type="text" id='FeaturelinkPage' class='form-control' placeholder="Page URL">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <span class='closeFeature'>X</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                </div>
+                <!-- /.card -->
+
+
+
+
+
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Feature Section</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+
+
+                                <div class="row mb-3">
+
+                                    <div class="col-md-5  ">
+
+                                        <p class='bg-danger text-white py-1 text-center'>Need Exact Size : width : 54 Height: 54</p>
+                                        <div class="tab">
+                                            <button class="tablinks" id="defaultOpen" onclick="openimgUpload(event, 'webp')">Webp</button>
+                                            <button class="tablinks" onclick="openimgUpload(event, 'jxr')">JXR</button>
+                                            <button class="tablinks" onclick="openimgUpload(event, 'jpg')">JPG/PNG</button>
+                                        </div>
+
+                                        <div id="webp" class="tabcontent defaultOpen">
+
+                                            <div class='mt-3'>
+
+                                                <input class="myinputforWebp" id='myinputforWebpOnModal' type="file" onchange="checkForwebp(this)" accept="image/webp">
+
+
+                                                <img src="images/upload.jpg" class="img-responsive img-fluid img-fluid-height homeagBanner homeFeatureBannerWebp">
+                                                <div id='cleaFieldsWEBP' class="hereForDimensionDetls_webp mt-3"></div>
+                                            </div>
+                                        </div>
+
+                                        <div id="jxr" class="tabcontent">
+                                            <label for="myinputforJXR">Select a file:</label>
+                                            <input type="file" class="myinputforJXR" id='myinputforJXROnModal' onchange="checkForJXR(this)">
+                                            <div class='mt-3'>
+                                                <br> Your Browser Does not Support JXR
+                                            </div>
+
+                                            <div id='cleaFieldsJXR' class="hereForDimensionDetls_jxr mt-3"></div>
+                                        </div>
+
+                                        <div id="jpg" class="tabcontent">
+
+                                            <div class='mt-3'>
+
+                                                <input class='myinputforJPG' id='myinputforJPGOnModal' type="file" onchange="checkForJPG(this)" accept="image/x-png,image/jpeg">
+
+                                                <img src="images/upload.jpg" class="img-responsive img-fluid img-fluid-height homeagBanner homeFeatureBannerjpg">
+                                                <div id='cleaFieldsJPG' class="hereForDimensionDetls_jpg mt-3"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group mt-3 altTextForBanner">
+                                            <label for="altTxt">Alt Text for Image</label>
+                                            <input type="text" class='form-control' placeholder="Alt text for Image" id='altTxtModal'>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-7">
+                                        <div class="col-md-12">
+                                            <div class="col-md-12 mb-1">
+                                                <label for="featureHeading">Feature Heading </label>
+                                            </div>
+                                            <div class="col-md-12  mb-2">
+                                                <input type="text" class='form-control featureHeadingModal' id="featureHeadingModal" placeholder="Feature Heading">
+                                            </div>
+                                            <div class="col-md-12  mb-2">
+                                                <label for="featureDescription">Feature Details:</label>
+                                                <textarea class="form-control featureDescriptionModal" rows="5" id="featureDescriptionModal"></textarea>
+                                            </div>
+                                            <div class="col-md-12">
+
+                                                <label for="FeaturelinkPage"> Page URL  </label>
+
+                                                <input type="text" id='FeaturelinkPageModal' class='form-control FeaturelinkPageModal' placeholder="Page URL">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" id='modalCloseFeature' class="btn btn-success">Add New</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- /.container-fluid -->
+        </section>
+        </div>
+        <!-- ./wrapper -->
+
+
+        <div id='showModelB4Del' class='px-2 py-2'>
+            <h4>Are You Sure, You want to delete.</h4>
+            <div class='d-flex'>
+                <a href="javascript:void(0)" id='yesDelContact' class="btn btn-success mr-3">Yes</a>
+                <!-- <a href="javascript:void(0)" id='NoDelContact' class="btn btn-danger">No</a> -->
+            </div>
+            <span class='closModalMsg'>X</span>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script defer src='js/customusimportcontact.js'></script>
+        <script src="https://cdn.tinymce.com/4/tinymce.min.js" referrerpolicy="origin"></script>
+        <script>
+            // Get the element with id="defaultOpen" and click on it
+            $(document).ready(function() {
+                document.getElementById("defaultOpen").click();
+                document.getElementById("defaultOpen_blogSection").click();
+
+            })
+
+
+            // tinymce.init({
+            //     selector: '#mytextarea'
+            // });
+
+
+            $(document).ready(function() {
+                tinymce.init({
+                    selector: '#mytextarea',
+                    height: 300,
+                    menubar: true,
+                    fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
+                    plugins: [
+                        'advlist autolink lists link image charmap print preview anchor',
+                        'searchreplace visualblocks code fullscreen',
+                        'insertdatetime media table paste code help wordcount textcolor colorpicker'
+                    ],
+                    toolbar: 'sizeselect styleselect | fontselect |  fontsizeselect | forecolor backcolor | undo redo | ' +
+                        ' bold italic backcolor | alignleft aligncenter ' +
+                        ' alignright alignjustify | bullist numlist outdent indent |' +
+                        ' removeformat | help | preview | fullscreen',
+                    content_css: [
+                        '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+                        'css/stylesheefTinyEditor.css'
+                    ]
+                });
+            });
+        </script>
+</body>
+
+</html>
